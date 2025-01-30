@@ -69,7 +69,20 @@ function drawWheel() {
 // Sync the input boxes with the options
 function updateOptions() {
   const inputs = document.querySelectorAll(".option-input");
-  options = Array.from(inputs).map((input) => input.value);
+
+  inputs.forEach(input => {
+    input.addEventListener("focus", function () {
+      this.placeholder = ""; // Remove placeholder when typing
+    });
+
+    input.addEventListener("blur", function () {
+      if (this.value.trim() === "") {
+        this.placeholder = `Option ${Array.from(inputs).indexOf(this) + 1}`;
+      }
+    });
+  });
+
+  options = Array.from(inputs).map(input => input.value);
   arc = Math.PI / (options.length / 2);
   drawWheel();
 }
@@ -119,7 +132,7 @@ function addOption() {
   const newOption = document.createElement("input");
   newOption.classList.add("option-input");
   newOption.placeholder = `Option ${options.length + 1}`;
-  newOption.value = `Option ${options.length + 1}`;
+  newOption.value = "";
   newOption.addEventListener("input", updateOptions);
 
   const deleteBtn = document.createElement("button");
@@ -136,12 +149,12 @@ function addOption() {
   updateOptions();
 }
 
-
-// Reset all options
+// Reset all options to default "Option 1"
 function resetOptions() {
   options = ["Option 1"];
-  optionsContainer.innerHTML = "";
+  optionsContainer.innerHTML = ""; // Clear all options
   addOption(); // Re-add the first option
+  document.querySelector(".option-input").value = "Option 1"; // Ensure it's "Option 1"
 }
 
 // Event Listeners
