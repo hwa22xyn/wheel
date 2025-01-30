@@ -108,7 +108,7 @@ function showResult() {
 
   const result = options[winningIndex];
 
-  resultBox.innerText = `The wheel landed on: ${result}`;
+  resultBox.innerText = `The One: ${result}`;
 }
 
 // Add a new option

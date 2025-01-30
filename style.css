@@ -123,7 +123,7 @@ button:hover {
   border-top: 30px solid #ffffff; /* White arrow pointing down */
   top: 50%; /* Center vertically relative to the canvas */
   left: calc(50% - 20px); /* Center horizontally above the canvas */
-  transform: translateY(-220px); /* Adjust to overlap the wheel */
+  transform: translateY(-230px); /* Adjust to overlap the wheel */
   z-index: 10;
 }
 
@@ -149,7 +149,7 @@ button:hover {
   border-radius: 5px;
   padding: 10px;
   background-color: #1a1a1a;
-  min-height: 40px;
+  min-height: 30px;
 }
 
 /* Title Box and Save Button */
@@ -162,10 +162,16 @@ button:hover {
 }
 
 #title-box {
-  font-size: 16px;
+  font-size: 18px;
   padding: 8px;
-  width: 300px;
+  width: 600px; /* Adjust the length of the box */
+  height: 25px; /* Adjust height if needed */
+  background-color: #0b0b0b; /* Change color */
+  color: white;
+  text-align: center;
+  border-radius: 8px;
 }
+
 
 #save-button {
   padding: 8px 12px;
