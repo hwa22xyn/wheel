@@ -1,0 +1,202 @@
+/* General Body Styles */
+body {
+  font-family: Arial, sans-serif;
+  background-color: #1a1a1a; /* Dark background */
+  color: #ffffff;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+/* Container for the overall layout */
+.container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-start;
+  width: 70%;
+  max-width: 1200px;
+  background-color: #333;
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+}
+
+/* Input Section (Options on the Left) */
+.input-section {
+  flex: 1;
+  text-align: left;
+  margin-right: 30px;
+}
+
+.input-section h2 {
+  font-size: 20px;
+  margin-bottom: 20px;
+  color: #00ffcc; /* Neon color for heading */
+}
+
+/* Option Input Container */
+.option-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+/* Ensure all input boxes are the same length */
+.option-input {
+  width: 100%; /* Make all options the same size */
+  max-width: 425px; /* Set a fixed length */
+  padding: 8px;
+  font-size: 14px;
+  border: 2px solid #00ffcc;
+  border-radius: 5px;
+  background-color: #1a1a1a;
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  position: relative;
+  margin-bottom: 5px;
+}
+
+/* Create a delete button */
+.option-container {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  position: relative;
+}
+
+.delete-btn {
+  position: absolute;
+  margin-top: -3.5px; /* Move it up */
+  left: 420px; /* Keep it inside the input box */
+  font-size: 14px; /* Reduce size */
+  color: #ff0099; /* Neon color */
+  background: transparent; /* No box */
+  border: none;
+  cursor: pointer;
+  padding: 4px;
+  width: 18px;
+  height: 18px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.delete-btn:hover {
+  color: #ff6600; /* Change color on hover */
+}
+
+button {
+  margin-top: 15px;
+  padding: 12px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  border: none;
+  border-radius: 5px;
+  color: #ffffff;
+  background-color: #ff0099; /* Neon pink */
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #ff66cc;
+}
+
+/* Wheel Section (On the Right) */
+.wheel-section {
+  flex: 1;
+  text-align: center;
+  position: relative;
+}
+
+/* Arrow Indicator */
+.arrow {
+  position: absolute;
+  width: 0;
+  height: 0;
+  border-left: 20px solid transparent;
+  border-right: 20px solid transparent;
+  border-top: 30px solid #ffffff; /* White arrow pointing down */
+  top: 50%; /* Center vertically relative to the canvas */
+  left: calc(50% - 20px); /* Center horizontally above the canvas */
+  transform: translateY(-220px); /* Adjust to overlap the wheel */
+  z-index: 10;
+}
+
+/* Wheel Canvas */
+#wheelCanvas {
+  margin: 0 auto;
+  border-radius: 50%;
+  box-shadow: 0 4px 15px rgba(255, 255, 255, 0.2);
+}
+#wheelCanvas {
+  width: 420px;
+  height: 420px;
+}
+
+/* Result Box Below the Wheel */
+#result-box {
+  margin: 20px 0;
+  font-size: 20px;
+  font-weight: bold;
+  color: #00ffcc; /* Neon green */
+  text-align: center;
+  border: 2px solid #00ffcc;
+  border-radius: 5px;
+  padding: 10px;
+  background-color: #1a1a1a;
+  min-height: 40px;
+}
+
+/* Title Box and Save Button */
+.title-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+  gap: 10px;
+}
+
+#title-box {
+  font-size: 16px;
+  padding: 8px;
+  width: 300px;
+}
+
+#save-button {
+  padding: 8px 12px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+/* Top Bar - Title Centered, Save Button Right */
+.top-bar {
+  position: absolute;
+  top: 10px;
+  left: 0;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#title-box {
+  font-size: 18px;
+  padding: 8px;
+  width: 300px;
+  text-align: center;
+}
+
+/* Save Button Positioned at Top Right */
+#save-button {
+  position: absolute;
+  top: 10px;
+  right: 20px;
+  padding: 8px 12px;
+  font-size: 16px;
+  cursor: pointer;
+}

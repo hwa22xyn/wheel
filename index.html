@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Spinning Wheel</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+
+<body>
+  <!-- Title Box (Centered) and Save Button (Top Right) -->
+  <div class="top-bar">
+    <input type="text" id="title-box" placeholder="Title (optional)">
+    <button id="save-button">Save as JPG</button>
+  </div>
+
+  <div class="container">
+    <!-- Input Section -->
+    <div class="input-section">
+      <h2>Enter Your Options</h2>
+      <div id="options-container">
+        <!-- Initial Option Input -->
+        <input class="option-input" value="Option 1" placeholder="Option 1" />
+      </div>
+      <!-- Buttons for Options -->
+      <button id="add-option">Add Option</button>
+      <button id="reset-options">Reset Options</button>
+    </div>
+
+    <!-- Wheel Section -->
+    <div class="wheel-section">
+      <h1>Spinning Wheel</h1>
+      <!-- Arrow Indicator -->
+      <div class="arrow"></div>
+      <!-- Canvas for the Wheel -->
+      <canvas id="wheelCanvas" width="500" height="500"></canvas>
+      <!-- Result Box -->
+      <div id="result-box"></div>
+      <!-- Spin Button -->
+      <button id="spinButton">Spin</button>
+    </div>
+  </div>
+
+  <!-- JavaScript -->
+  <script src="script.js"></script>
+</body>
+</html>
