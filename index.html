@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Wheel of Random</title>
   <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&family=Quicksand:wght@400;700&display=swap" rel="stylesheet">
 </head>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
@@ -20,18 +21,24 @@
     <!-- Input Section -->
     <div class="input-section">
       <h2>Enter Your Options</h2>
-      <div id="options-container">
-        <!-- Initial Option Input -->
-        <input class="option-input" value="Option 1" placeholder="Option 1" />
+      <textarea id="options-textarea" placeholder="Enter one option per line..."></textarea>
+      
+      <!-- Buttons and Dropdown for Options -->
+      <div class="options-container">
+        <select id="templateSelect">
+          <option value="Fruits">Fruits</option>
+          <option value="Activities">Activities</option>
+          <!-- Favorited wheels will be added here dynamically -->
+        </select>
+        <button id="reset-options">Reset Options</button>
       </div>
-      <!-- Buttons for Options -->
-      <button id="add-option">Add Option</button>
-      <button id="reset-options">Reset Options</button>
-    </div>
+      
+      <button id="favorite-wheel">Favorite This Wheel</button>
+    </div> <!-- End of Input Section -->
 
     <!-- Wheel Section -->
     <div class="wheel-section">
-      <h2>Leave to the Wheel</h2>
+      <h2>Leave it to the Wheel</h2>
       <!-- Arrow Indicator -->
       <div class="arrow"></div>
       <!-- Canvas for the Wheel -->
@@ -40,10 +47,17 @@
       <div id="result-box"></div>
       <!-- Spin Button -->
       <button id="spinButton">Spin</button>
-    </div>
-  </div>
+    </div> <!-- End of Wheel Section -->
+  </div> <!-- End of Container -->
 
+  <!-- Counter Section -->
+  <div class="counter-container">
+    <p>Wheel spins: <span id="spin-count">0</span> | Hours of spinning: <span id="spin-hours">0</span></p>
+    <p class="copyright">© 2025 YourWebsite. All rights reserved.</p>
+  </div>
+  
   <!-- JavaScript -->
   <script src="script.js"></script>
+
 </body>
 </html>
